@@ -40,7 +40,7 @@ const phones = [
     {
         brand: 'Iphone',
         model: '14',
-        img:"assets/iphone.jfif",
+        img:"assets/N53347123A_1.avif",
         ram: 4,
         rom: 1024,
         camera: '30 megapixel',

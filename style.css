@@ -26,13 +26,17 @@ h2{
     text-align: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    padding: 40px;
+    padding: 100px;
     gap: 50px;
+    /* background-image: url("https://images.pexels.com/photos/370799/pexels-photo-370799.jpeg?auto=compress&cs=tinysrgb&w=400");
+    background-repeat: no-repeat;
+    background-size: 100% 100%; */
 }
 img{
     border-radius: 5px;
     width: 100px;
     margin-bottom: 10px;
+    /* image-rendering:auto; */
 }
 h5{
     color: violet;
@@ -59,4 +63,9 @@ h3{
 .btn:hover{
     color: blueviolet;
     border-color:blueviolet;
+}
+.header{
+    background-color: azure;
+    border-radius: 10px;
+    padding: 5px;
 }
