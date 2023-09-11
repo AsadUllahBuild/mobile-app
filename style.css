@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url("https://images.pexels.com/photos/370799/pexels-photo-370799.jpeg?auto=compress&cs=tinysrgb&w=400");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+
+}
+
+h2{
+    /* padding: 10px; */
+    margin-top: 40px;
+    text-align: center;
+    color: violet;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 35px;
+    
+
+}
+#head{
+    display: flex;
+    text-align: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 40px;
+    gap: 50px;
+}
+img{
+    border-radius: 5px;
+    width: 100px;
+    margin-bottom: 10px;
+}
+h5{
+    color: violet;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-color: red;
+    border: 2px;
+    box-shadow: 5px 5px 10px ;
+    margin-bottom: 5px;
+}
+h3{
+    color: deeppink;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size:25px;
+    margin-bottom: 10px;
+}
+.btn{
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 5px 5px 5px;
+    border-color: violet;
+    color: deeppink;
+}
+
+.btn:hover{
+    color: blueviolet;
+    border-color:blueviolet;
+}
