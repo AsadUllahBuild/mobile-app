@@ -30,11 +30,11 @@ const phones = [
     },
     {
         brand: 'Tecno',
-        model: 'spark10',
-        img:"assets/tecno.jfif",
-        ram: 12,
-        rom: 512,
-        camera: '25 megapixel',
+        model: 'Camon 19 Neo',
+        img:"https://images.priceoye.pk/tecno-camon-19-neo-pakistan-priceoye-5m02d-270x270.webp",
+        ram: 6,
+        rom: 128,
+        camera: '48 megapixel',
         USD: 450,
     },
     {
@@ -78,9 +78,30 @@ const phones = [
     <h5>Rom:${phones[i].rom}GB</h5>
     <h5>Camera:${phones[i].camera}</h5>
     <h5>USD: ${phones[i].USD}</h5>
-    <button class="btn">Add To Cart</button>
+    <div>
+    <button class="btn" onclick="AddToCart(${i})">Add To Cart</button>
+    </div>
+    
 
 </div>`
     
     
+ }
+
+ const cartArr = []
+ function AddToCart(i) {
+    if (cartArr.includes(phones[i])=== true) {
+        console.log("item is Existed");
+    } else {
+        cartArr.push(phones[i]);
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Your Item Is Successfully Added',
+            showConfirmButton: false,
+            timer: 1500
+        })
+    }
+    console.log("cartArr ==>" , cartArr);
+
  }
