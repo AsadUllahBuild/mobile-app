@@ -4,7 +4,7 @@ const phones = [
     {
         brand: 'Samsung',
         model: 'S20',
-        img:"assets/samsung.jfif",
+        img: "assets/samsung.jfif",
         ram: 8,
         rom: 256,
         camera: '20 megapixel',
@@ -13,7 +13,7 @@ const phones = [
     {
         brand: 'Xiomi',
         model: 'note10',
-        img:"assets/xiomi.jfif",
+        img: "assets/xiomi.jfif",
         ram: 4,
         rom: 64,
         camera: '10 megapixel',
@@ -22,7 +22,7 @@ const phones = [
     {
         brand: 'Infinix',
         model: 'z10',
-        img:"assets/infinix.jfif",
+        img: "assets/infinix.jfif",
         ram: 2,
         rom: 16,
         camera: '5 megapixel',
@@ -31,7 +31,7 @@ const phones = [
     {
         brand: 'Tecno',
         model: 'Camon 19 Neo',
-        img:"https://images.priceoye.pk/tecno-camon-19-neo-pakistan-priceoye-5m02d-270x270.webp",
+        img: "https://images.priceoye.pk/tecno-camon-19-neo-pakistan-priceoye-5m02d-270x270.webp",
         ram: 6,
         rom: 128,
         camera: '48 megapixel',
@@ -40,7 +40,7 @@ const phones = [
     {
         brand: 'Iphone',
         model: '14',
-        img:"assets/N53347123A_1.avif",
+        img: "assets/N53347123A_1.avif",
         ram: 4,
         rom: 1024,
         camera: '30 megapixel',
@@ -49,7 +49,7 @@ const phones = [
     {
         brand: 'Oppo',
         model: 'F11',
-        img:"assets/oppo.jfif",
+        img: "assets/oppo.jfif",
         ram: 8,
         rom: 256,
         camera: '20 megapixel',
@@ -58,7 +58,7 @@ const phones = [
     {
         brand: 'Vivo',
         model: 'y20',
-        img:"assets/vivo.jfif",
+        img: "assets/vivo.jfif",
         ram: 4,
         rom: 64,
         camera: '8 megapixel',
@@ -67,9 +67,9 @@ const phones = [
 
 ]
 
- console.log(phones[1].brand);
+//  console.log(phones[1].brand);
 
- for (let i = 0; i < phones.length; i++) {
+for (let i = 0; i < phones.length; i++) {
     mobiles.innerHTML += `<div class="header">
     <h3>${phones[i].brand}</h3>
     <img src="${phones[i].img}" class="image">
@@ -78,22 +78,31 @@ const phones = [
     <h5>Rom:${phones[i].rom}GB</h5>
     <h5>Camera:${phones[i].camera}</h5>
     <h5>USD: ${phones[i].USD}</h5>
-    <div>
+    
     <button class="btn" onclick="AddToCart(${i})">Add To Cart</button>
-    </div>
-    
+    </div>`
 
-</div>`
-    
-    
- }
 
- const cartArr = []
- function AddToCart(i) {
-    if (cartArr.includes(phones[i])=== true) {
-        console.log("item is Existed");
+
+
+
+}
+
+const cartArr = []
+function AddToCart(index) {
+    if (cartArr.includes(phones[index])) {
+        // console.log("item is Existed");
+        for (let i = 0; i < cartArr.length; i++) {
+            if (cartArr[i] === phones[index]) {
+                cartArr[i].Quantity += 1
+            }
+
+
+        }
     } else {
-        cartArr.push(phones[i]);
+
+        // console.log();
+
         Swal.fire({
             position: 'top-end',
             icon: 'success',
@@ -101,7 +110,19 @@ const phones = [
             showConfirmButton: false,
             timer: 1500
         })
-    }
-    console.log("cartArr ==>" , cartArr);
+        phones[index].Quantity = 1
+        cartArr.push(phones[index]);
 
- }
+    }
+    console.log("cartArr ==>", cartArr);
+
+}
+
+
+function goToCart() {
+    const items = JSON.stringify(cartArr);
+    localStorage.setItem("cartArr", items)
+    window.location="./cart.html";
+
+    
+}
